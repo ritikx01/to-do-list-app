@@ -40,7 +40,7 @@ function ToDoList(){
 
     return(
     <>
-        <div>
+        <div className="to-do-list">
             <h1>To-do list</h1>
 
             <div>
@@ -51,23 +51,23 @@ function ToDoList(){
                     value={newTask}
                     placeholder="Enter new task"
                 />
-                <button onClick={handleAddTask}>Click Me!</button>
+                <button className="add-button" onClick={handleAddTask}>Add</button>
             </div>
             <ol>
                 {tasks.map((task, index) => <li key={index}>
-                                                    {task}
+                                                    <span className="text">{task}</span>
                                                     <button 
                                                     className="delete-button"
                                                     onClick={() => handleRemoveTask(index)}>
                                                         Delete
                                                     </button>
                                                     <button
-                                                    className="move-up-button"
+                                                    className="move-button"
                                                     onClick={() => moveTaskUp(index)}>
                                                         Move UP
                                                     </button>
                                                     <button 
-                                                    className="move-down-button"
+                                                    className="move-button"
                                                     onClick={() => moveTaskDown(index)}>
                                                         Move Down
                                                     </button>
